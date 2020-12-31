@@ -3,8 +3,8 @@ let config = {strength: 1};
 gsap.to("h1", {
     repeat: -1,
     yoyo: true,
-    y: 9,
-    duration: 0.6,
+    y: 12,
+    duration: 0.8,
     ease: "power1.inOut",
     modifiers: {
       x: gsap.utils.unitize(value => value * config.strength, "px")
