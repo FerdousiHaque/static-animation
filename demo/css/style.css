@@ -336,6 +336,12 @@ letter-spacing: 3px; font-family: Helvetica, Arial, sans-serif; }
   
 }
 
+.gs_reveal {
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0s;
+}
+
 #scrollUp {
   display: none;
   background: #145629;
