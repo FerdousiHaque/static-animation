@@ -128,9 +128,8 @@ ScrollTrigger.create({
 // make the right edge "stick" to the scroll bar. force3D: true improves performance
 gsap.set(".skewElem", {transformOrigin: "right center", force3D: true});
 
+// Train going animation
 gsap.set('#bridge', {autoAlpha:1});
-
-//MorphSVGPlugin.convertToPath("circle, rect, ellipse, line, polygon, polyline");
 
 var treibstange = document.querySelector("#treibstange"),
     Kuppelstange = document.querySelector("#Kuppelstange"),
@@ -193,7 +192,7 @@ var svgWidth = document.querySelector("#bridge").getBoundingClientRect().width,
 
 console.log(svgWidth, umfang);
 
-var action = gsap
+var action = gsap.timeline({})
 .to('#lok', {x:1300, duration: 15, ease:'none',repeat: -1,
 },0)
 .add(theLoc(500000000000000), 0)
