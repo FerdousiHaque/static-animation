@@ -6,6 +6,7 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;  
 }
 
 canvas {
@@ -47,8 +48,6 @@ canvas {
 #stats, .count-particles{
   -webkit-user-select: none;
 }
-
-
 
 #sitelogo{
   position: absolute;
@@ -407,4 +406,61 @@ progress::-webkit-progress-value {
 progress::-moz-progress-bar {
   background: linear-gradient(to left, #db38b5,#01b3e3,#25ce7b,#fdc741,#ff6b01,#fc4236);
   background-attachment: fixed;
+}
+
+/* Bycicle animation */
+.bicycle {
+  position: relative;
+  -webkit-animation:linear infinite;
+  -webkit-animation-name: run;
+  -webkit-animation-duration: 10s;
+}     
+@-webkit-keyframes run {
+    0% { left: -50%;}
+    100%{ left : 100%;}
+}
+
+
+#rightwheel, #leftwheel, #rotate {
+  
+  animation: rotation 1.5s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+  }
+  
+  @keyframes rotation {
+  from {transform: rotate(0deg);}
+  to   {transform: rotate(360deg);}
+  }
+
+  
+#rightleg, #leftleg {
+  animation: move 1s ease-in-out infinite alternate;
+  transform-origin: top;
+}
+
+@keyframes move {
+  from {transform: rotateX(0deg) ;}
+  to   {transform: rotateX(20deg);}
+}
+
+#bikeman {
+  animation: move2 1s ease-in-out infinite alternate;
+  transform-origin: bottom;
+}
+
+@keyframes move2 {
+  from {transform: rotateX(0deg) ;}
+  to   {transform: rotateX(10deg);}
+}
+
+#hat {
+  animation: hatmove 1s ease-in-out infinite alternate;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+@keyframes hatmove {
+  from {transform: translateY(0%) rotateY(0deg) ;}
+  to   {transform: translateY(25%) rotateY(20deg);}
 }
