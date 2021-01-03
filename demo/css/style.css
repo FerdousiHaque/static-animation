@@ -252,11 +252,11 @@ letter-spacing: 3px; font-family: Helvetica, Arial, sans-serif; }
 }
 
 #productSection .container .row .gs_reveal img:hover{
-  animation: move 5s infinite;
+  animation: imgmove 5s infinite;
   perspective: 900px;
 }
 
-@keyframes move {
+@keyframes imgmove {
   20% {
     transform: rotateY(10deg) rotateX(10deg);
   }
