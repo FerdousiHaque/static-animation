@@ -402,7 +402,7 @@ progress::-moz-progress-bar {
   position: relative;
   -webkit-animation:linear infinite;
   -webkit-animation-name: run;
-  -webkit-animation-duration: 10s;
+  -webkit-animation-duration: 15s;
 }     
 @-webkit-keyframes run {
     0% { left: -50%;}
