@@ -55,9 +55,10 @@ $(window).scroll(function () {
 
     // when about section is on view
     if ($(this).scrollTop() >= (aboutSec.offsetWidth-150) && !scrolledDown) {
-        t1.fromTo(aboutSec, 1.5, { y:"65%", opacity: 0 }, { y: "0%", opacity: 1 });
+        t1.fromTo(aboutSec, 1.2, { y:"65%", opacity: 0 }, { y: "0%", opacity: 1 });
         scrolledDown = true;
     }
+
     // add active class of navbar
     addClassOnScroll();
 });
@@ -187,19 +188,21 @@ function animation(container) {
 var scrollUp = document.querySelector('.jwpnavbar');
 
 ScrollTrigger.create({
-  start: 'top -50',
-  toggleClass: {className: 'jwpnavbar--scrolled', targets: '.jwpnavbar'}
-});
-
-ScrollTrigger.create({
-  start: 'top -300',
-  toggleClass: {className: 'jwpnavbar--up', targets: '.jwpnavbar'},
+  start: 'top -800',
+  toggleClass: {className: 'jwpnavbar--scrolled', targets: '.jwpnavbar'},
   onUpdate: ({direction}) => {
     if (direction == -1) {
+      scrollUp.classList.add('jwpnavbar--scrolled');
       scrollUp.classList.remove('jwpnavbar--up');
     } else {
+      scrollUp.classList.remove('jwpnavbar--scrolled');
       scrollUp.classList.add('jwpnavbar--up');
-    }}
+    }
+    if($(this).scrollTop() < 850) {
+      scrollUp.classList.remove('jwpnavbar--scrolled');
+      scrollUp.classList.add('jwpnavbar--up');
+    }
+  }
 });
 
 // active class activate
