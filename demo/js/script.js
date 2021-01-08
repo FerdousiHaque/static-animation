@@ -134,6 +134,7 @@ var mouse = {
     }
 };
 
+// product image rotation 
 function animation(container) {
 
     var inner = container.querySelector(".product");
@@ -184,28 +185,28 @@ function animation(container) {
 
 }
 
-// stricky navbar
-var scrollUp = document.querySelector('.jwpnavbar');
+// stricky navbar will appare onScroll
+var navbar = document.querySelector('.jwpnavbar');
 
 ScrollTrigger.create({
   start: 'top -800',
   toggleClass: {className: 'jwpnavbar--scrolled', targets: '.jwpnavbar'},
   onUpdate: ({direction}) => {
     if (direction == -1) {
-      scrollUp.classList.add('jwpnavbar--scrolled');
-      scrollUp.classList.remove('jwpnavbar--up');
+      navbar.classList.add('jwpnavbar--scrolled');
+      navbar.classList.remove('jwpnavbar--up');
     } else {
-      scrollUp.classList.remove('jwpnavbar--scrolled');
-      scrollUp.classList.add('jwpnavbar--up');
+      navbar.classList.remove('jwpnavbar--scrolled');
+      navbar.classList.add('jwpnavbar--up');
     }
     if($(this).scrollTop() < 850) {
-      scrollUp.classList.remove('jwpnavbar--scrolled');
-      scrollUp.classList.add('jwpnavbar--up');
+      navbar.classList.remove('jwpnavbar--scrolled');
+      navbar.classList.add('jwpnavbar--up');
     }
   }
 });
 
-// active class activate
+// active class of navbar activate
 var addClassOnScroll = function () {
   var windowTop = $(window).scrollTop();
   $('section[id]').each(function (index, elem) {
