@@ -120,19 +120,43 @@ letter-spacing: 3px; font-family: Helvetica, Arial, sans-serif; }
   padding-right: 20px;
 }
 
-#nav-list {
-  margin-top: 85px;
-  font-size: 1.2em;
-  letter-spacing: 2px;
-}
-
 #nav-list a {
   color: #004044;
   text-align: center;
 }
 
+#nav-list a.active {
+  background: #DBDDE0;
+}
+
 #nav-list a:hover {
   background: #DBDDE0;
+}
+
+.jwpnavbar {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #DBDDE0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  z-index: 1000;
+  transition: ease 0.5s;
+}
+
+.jwpnavbar--up{
+  top: -140px;
+  transition: ease 0.4s;
+}
+
+.jwpnavbar--scrolled {
+    height: 50px;
+    background: #557c3e;
 }
 
 #nav-list a span {

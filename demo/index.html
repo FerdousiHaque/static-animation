@@ -68,15 +68,15 @@
                       <span>+880 248953846</span></a>
             </div>
           <br>
-            <ul id="nav-list" class="nav navbar-nav">
-              <li id="navHomeButton" class="active">
-                <a href="#">HOME</a>
+            <ul id="nav-list" class="nav navbar-nav jwpnavbar">
+              <li id="navHomeButton">
+                <a href="#carousel-example-generic">HOME</a>
               </li>
               <li id="navAboutButton">
-                <a href="#">ABOUT</a>
+                <a href="#aboutSection">ABOUT</a>
               </li>
               <li id="navBrandButton">
-                <a href="#" >BRANDS</a>
+                <a href="#brandSection" >BRANDS</a>
               </li>
               <li id="navProductButton">
                 <a href="#productSection" >PRODUCTS</a>
@@ -100,7 +100,7 @@
 <!-- Start of #main-content -->
 <div id="main-content" class="container-fluid">
 
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="max-height: 600px; overflow: hidden;">
+  <section id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="max-height: 600px; overflow: hidden;">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -139,7 +139,7 @@
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-  </div>
+  </section>
 
   <section id="aboutSection">
     <h1 class="sectionTitle text-center">ABOUT</h1> 
@@ -150,11 +150,9 @@
 
     <div class="container" id="video_div">
       <iframe width="100%" height="500px" src="https://www.youtube.com/embed/bo2KQer1KNM?start=22" 
-      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
-      picture-in-picture" allowfullscreen>
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
       </iframe>
     </div>
-    
     
   </section>
   <section id="brandSection">
@@ -277,7 +275,7 @@
             skills, methods, and
             processes used in the</p>
         </div>
-        <div class="col-md-3 column">
+        <div class="col-md-3 column gs_reveal gs_reveal_fromLeft">
           <img src="images/all logo-12.png" class="img-responsive">
           <h2>Repairing of machine</h2>
           <p>Technology ("science of
@@ -289,7 +287,7 @@
               in the accomplishment
               of objectives, such as</p>
         </div>
-        <div class="col-md-3 column">
+        <div class="col-md-3 column gs_reveal gs_reveal_fromRight">
           <img src="images/all logo-13.png" class="img-responsive">
           <h2>Sale of spare parts</h2>
           <p>Technology ("science of
@@ -322,12 +320,12 @@
     <h1 class="sectionTitle text-center">CONTACTS</h1>
     <div class="container">
       <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-7 gs_reveal gs_reveal_fromLeft">
           <a href="https://goo.gl/maps/AhaJsfGqQb47tnh3A" target="_blank">
             <div id="map-tile"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.364181213347!2d90.39858161543303!3d23.876701489855645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c4399d7a5e37%3A0xc2a4ee5451f14290!2sAkash%20Plaza!5e0!3m2!1sen!2sbd!4v1605646125086!5m2!1sen!2sbd" width="650" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
           </a>
         </div>
-        <div class="col-md-5 text-center contactDetails">
+        <div class="col-md-5 text-center contactDetails gs_reveal gs_reveal_fromRight">
           <h1>AKAS PLAZA</h1>
           <h2>5th Floor, Room # 501 <br>
               Sector # 9, Uttara, Dhaka,<br>
@@ -506,6 +504,7 @@
     }, 800);
   });
 </script>
+<!-- to add Animation -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js" integrity="sha512-wK2NuxEyN/6s53M8G7c6cRUXvkeV8Uh5duYS06pAdLq4ukc72errSIyyGQGYtzWEzvVGzGSWg8l79e0VkTJYPw==" crossorigin="anonymous"></script>
 <script src="js/script.js"></script>

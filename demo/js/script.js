@@ -58,6 +58,8 @@ $(window).scroll(function () {
         t1.fromTo(aboutSec, 1.5, { y:"65%", opacity: 0 }, { y: "0%", opacity: 1 });
         scrolledDown = true;
     }
+    // add active class of navbar
+    addClassOnScroll();
 });
 
 // Top Progress bar animation when scrolling
@@ -180,3 +182,37 @@ function animation(container) {
     container.onmouseenter = onMouseEnterHandler;
 
 }
+
+// stricky navbar
+var scrollUp = document.querySelector('.jwpnavbar');
+
+ScrollTrigger.create({
+  start: 'top -50',
+  toggleClass: {className: 'jwpnavbar--scrolled', targets: '.jwpnavbar'}
+});
+
+ScrollTrigger.create({
+  start: 'top -300',
+  toggleClass: {className: 'jwpnavbar--up', targets: '.jwpnavbar'},
+  onUpdate: ({direction}) => {
+    if (direction == -1) {
+      scrollUp.classList.remove('jwpnavbar--up');
+    } else {
+      scrollUp.classList.add('jwpnavbar--up');
+    }}
+});
+
+// active class activate
+var addClassOnScroll = function () {
+  var windowTop = $(window).scrollTop();
+  $('section[id]').each(function (index, elem) {
+      var offsetTop = $(elem).offset().top;
+      var outerHeight = $(this).outerHeight(true);
+
+      if( windowTop > (offsetTop - 50) && windowTop < ( offsetTop + outerHeight)) {
+          var elemId = $(elem).attr('id');
+          $("ul li a.active").removeClass('active');
+          $("ul li a[href='#" + elemId + "']").addClass('active');
+      }
+  });
+};
