@@ -99,7 +99,7 @@ function animateFrom(elem, direction) {
     gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
       
       ScrollTrigger.create({
-        start: "top 45%",
+        start: "top 60%",
         trigger: elem,
         toggleActions: 'play none none none',
         onEnter: function() { animateFrom(elem) }, 
@@ -174,17 +174,12 @@ function animation(container) {
     };
 
     var updateTransformStyle = function (x, y) {
-      console.log(x);
-      console.log(y,"xx");
-        //x = (6-x).toFixed(2);
         if(x>6){x = (x-6).toFixed(2);} else if(x<=6){
           x = (6-x).toFixed(2);
         } 
         if(y<=0) {
           y = Math.abs(y)+Math.abs(y);
         }
-        console.log(x);
-        console.log(y);
         var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
         inner.style.transform = style;
         inner.style.webkitTransform = style;
@@ -218,7 +213,6 @@ ScrollTrigger.create({
     }
   }
 });
-
 
 // active class of navbar activate
 var addClassOnScroll = function () {
