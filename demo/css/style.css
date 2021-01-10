@@ -295,18 +295,29 @@ letter-spacing: 3px; font-family: Helvetica, Arial, sans-serif; }
   min-height: 650px;
 }
 
-#serviceSection .container .row .column img{
+#serviceSection .container .row .column img {
   padding: 20px;
 }
-
+#serviceSection .container .row .column img:hover {
+  cursor: pointer;
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2); 
+}
 #serviceSection .container .row .column h2 {
   margin-bottom: 25px;
+}
+
+#serviceSection .container .row .column h2:hover {
+  cursor: pointer;
+  -moz-transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
 }
 
 #contactSection .row{
   margin: 40px 0px;
   color: #145629;
-  
 }
 
 #contactSection .row h1{
