@@ -99,8 +99,11 @@ function animateFrom(elem, direction) {
     gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
       
       ScrollTrigger.create({
+        start: "top 45%",
         trigger: elem,
+        toggleActions: 'play none none none',
         onEnter: function() { animateFrom(elem) }, 
+        once: true
         });
     });
   });
