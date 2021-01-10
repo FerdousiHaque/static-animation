@@ -157,6 +157,7 @@ letter-spacing: 3px; font-family: Helvetica, Arial, sans-serif; }
   height: 50px;
   z-index: 1000;
   background: #557c3e;
+  transition: ease 0.4s;
 }
 
 #nav-list a span {
@@ -279,8 +280,6 @@ letter-spacing: 3px; font-family: Helvetica, Arial, sans-serif; }
 #productSection .container .row .movement .product{
   transition: transform 0.5s;
   -webkit-transition: transform 0.5s;
-  -moz-transition: transform 0.5s;
-  -o-transition: transform 0.5s;
 }
 
 #productSection .container .row .movement .product:hover{
@@ -424,6 +423,7 @@ progress::-moz-progress-bar {
 /* Bycicle animation */
 .bicycle {
   position: relative;
+  display: block;
   -webkit-animation:linear infinite;
   -webkit-animation-name: run;
   -webkit-animation-duration: 15s;

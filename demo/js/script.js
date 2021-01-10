@@ -54,7 +54,7 @@ $(window).scroll(function () {
     }
 
     // when about section is on view
-    if ($(this).scrollTop() >= (aboutSec.offsetWidth-150) && !scrolledDown) {
+    if (current >= (aboutSec.offsetWidth-150) && !scrolledDown) {
         t1.fromTo(aboutSec, 1.2, { y:"65%", opacity: 0 }, { y: "0%", opacity: 1 });
         scrolledDown = true;
     }
@@ -147,9 +147,7 @@ function animation(container) {
         return counter++ % refreshRate === 0;
     };
     var onMouseEnterHandler = function (event) {
-     
         update(event);
-    
     };
 
     var onMouseLeaveHandler = function () {
@@ -163,7 +161,9 @@ function animation(container) {
     };
     var update = function (event) {
         mouse.updatePosition(event);
-
+        console.log(mouse.x);
+        console.log(mouse.y);
+        console.log("after");
         updateTransformStyle(
             (mouse.y / inner.offsetHeight / 2).toFixed(2),
             (mouse.x / inner.offsetWidth / 2).toFixed(2)
@@ -171,7 +171,17 @@ function animation(container) {
     };
 
     var updateTransformStyle = function (x, y) {
-        x = (6-x).toFixed(2);
+      console.log(x);
+      console.log(y,"xx");
+        //x = (6-x).toFixed(2);
+        if(x>6){x = (x-6).toFixed(2);} else if(x<=6){
+          x = (6-x).toFixed(2);
+        } 
+        if(y<=0) {
+          y = Math.abs(y)+Math.abs(y);
+        }
+        console.log(x);
+        console.log(y);
         var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
         inner.style.transform = style;
         inner.style.webkitTransform = style;
@@ -189,7 +199,7 @@ function animation(container) {
 var navbar = document.querySelector('.jwpnavbar');
 
 ScrollTrigger.create({
-  start: 'top -800',
+  start: 'top -1500',
   toggleClass: {className: 'jwpnavbar--scrolled', targets: '.jwpnavbar'},
   onUpdate: ({direction}) => {
     if (direction == -1) {
@@ -199,12 +209,13 @@ ScrollTrigger.create({
       navbar.classList.remove('jwpnavbar--scrolled');
       navbar.classList.add('jwpnavbar--up');
     }
-    if($(this).scrollTop() < 850) {
+    if($(this).scrollTop() < 1500) {
       navbar.classList.remove('jwpnavbar--scrolled');
       navbar.classList.add('jwpnavbar--up');
     }
   }
 });
+
 
 // active class of navbar activate
 var addClassOnScroll = function () {
