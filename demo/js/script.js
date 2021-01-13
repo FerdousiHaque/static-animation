@@ -1,5 +1,5 @@
 let config = {strength: 1};
-// add animation in all heading
+// add animation in all heading - done
 gsap.to("h1", {
     repeat: -1,
     yoyo: true,
@@ -11,10 +11,22 @@ gsap.to("h1", {
     }
   });
 
-  // add animation in about paragraph
-  const about = document.getElementById("about-para");
+//first main title moving animation
+gsap.to(".count-particles", {
+    repeat: -1,
+    yoyo: true,
+    y: 15,
+    duration: 1.5,
+    ease: "power1.inOut",
+    modifiers: {
+      x: gsap.utils.unitize(value => value * config.strength, "px")
+    }
+  });
 
-  gsap.to(about, {
+// add animation in about paragraph - done
+const about = document.getElementById("about-para");
+
+gsap.to(about, {
     repeat: -1,
     yoyo: true,
     x: 10,
@@ -31,7 +43,6 @@ const particles = document.querySelector("#particles-js");
 const tittle = document.querySelector("#company_tittle");
 const logoImage = document.querySelector("#sitelogo");
 const siteText = document.querySelector("#exploreSite");
-const aboutSec = document.querySelector("#aboutSection");
 
 // object of animation script
 const t1 = new TimelineMax();
@@ -53,17 +64,11 @@ $(window).scroll(function () {
         document.getElementById("scrollUp").style.display = "none";
     }
 
-    // when about section is on view
-    if (current >= (aboutSec.offsetWidth-150) && !scrolledDown) {
-        t1.fromTo(aboutSec, 1.2, { y:"65%", opacity: 0 }, { y: "0%", opacity: 1 });
-        scrolledDown = true;
-    }
-
     // add active class of navbar
     addClassOnScroll();
 });
 
-// Top Progress bar animation when scrolling
+// Top Progress bar animation when scrolling - ADDdone
 gsap.registerPlugin(ScrollTrigger);
 gsap.to('progress', {
   value: 100,
@@ -71,6 +76,7 @@ gsap.to('progress', {
   scrollTrigger: { scrub: 0.3 }
 });
 
+// left-right animation
 function animateFrom(elem, direction) {
     direction = direction | 1;
     
@@ -99,7 +105,7 @@ function animateFrom(elem, direction) {
     gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
       
       ScrollTrigger.create({
-        start: "top 60%",
+        start: "15px 75%",
         trigger: elem,
         toggleActions: 'play none none none',
         onEnter: function() { animateFrom(elem) }, 
